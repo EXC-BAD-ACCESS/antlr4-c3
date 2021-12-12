@@ -628,13 +628,10 @@ export class MethodSymbol extends RoutineSymbol {
 export class FieldSymbol extends VariableSymbol {
     public visibility = MemberVisibility.Invalid;
 
-    public setter: MethodSymbol | undefined;
-    public getter: MethodSymbol | undefined;
+    public setter?: MethodSymbol;
+    public getter?: MethodSymbol;
 
-    constructor(name: string, type: Type) {
-        super(name, type);
-    }
-};
+}
 
 // Classes and structs.
 export class ClassSymbol extends ScopedSymbol implements Type {
